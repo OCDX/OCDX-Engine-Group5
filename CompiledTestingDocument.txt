@@ -16,3 +16,7 @@ to input fake usernames to make sure these are shown correctly when users login.
 these are uploaded to the correct places, shown correctly on their appropriate web pages, and download correctly for users.  For user info,
 we will need to input fake user info and make sure this data is displayed correctly for a user’s profile.  
 
+Verfication Vs. Validation Tests
+
+Verfication tests are for verifying user or sensitive information. For example, verify the email address of a user. Validation tests are for
+verifying that things in the back end of the system are working. An example for that would be to make sure a database query is successful.
