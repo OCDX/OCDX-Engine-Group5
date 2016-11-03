@@ -22,7 +22,7 @@ create table swedb.users(
     userid      serial, 
     email       varchar(100),
     password    varchar(20),
-    usertype    integer,
+    usertype    varchar(20),
     gender      varchar(10), 
     jobtitle    varchar(50),
     org         varchar(50),
