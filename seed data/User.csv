@@ -1,4 +1,4 @@
-userid,email,passoword,usertype,gender,jobtitile,org,edlevel,fname,lname,city,state,zip,country,phone,banstatus
+userid,email,password,usertype,gender,jobtitle,org,edlevel,fname,lname,city,state,zip,country,phone,banstatus
 00001,abc123@example.com,123456,researcher,male,Assistant Professor,University of Missouri,phd,John,Carter,Columbia,MO,65211,US,5731234567,0
 00002,def456@example.com,584397,researcher,male,Postdoc,University of Michigan,phd,Henry,Brown,Ann Arbor,MI,48106,US,7341234567,0
 00003,ghi789@example.com,gh54893,researcher,female,Professor,University of California-Berkley,phd,Jake,Musik,Berkley,CA,94701,US,5101234567,0

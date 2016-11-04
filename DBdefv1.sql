@@ -53,4 +53,4 @@ create table swedb.stats(
     reporteeid  integer,
     content     varchar(140),
     reason      varchar(140),
-    json        json);
+    json        varchar(20));

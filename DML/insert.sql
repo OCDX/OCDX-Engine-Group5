@@ -14,28 +14,41 @@ insert into swedb.users values (
 65211,
 'US',
 5731234567,
-0)
+0);
 
 insert into swedb.pages values (
 00001,
 00001,
 '00001.json',
 '00001_update.json',
-'00001_archive.json')
+'00001_archive.json');
 
 insert into swedb.comment values (
 00001,
 00002,
 00001,
 '5/12/2016 12:27',
-'This topic is interesting!')
+'This topic is interesting!');
 
-insert into swedb.comment values (
+insert into swedb.stats values (
 00001,
-00002,
+'create',
+'1/23/2016 16:36',
 00001,
-'5/12/2016 12:27',
-'This topic is interesting!')
+NULL,
+'00001_update.json',
+'00001_archive.json',
+NULL,
+NULL,
+00001,
+00006,
+NULL,
+NULL,
+NULL,
+NULL,
+'00001.json');
+
+
 
 
 
