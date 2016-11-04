@@ -1,9 +1,9 @@
 tid,action,date,pageid,timeonpage,updatedjson,archivejson,accepterid,changerid,requestorid,assignedid,reporterid,reporteeid,content,reason,json
-8573067493,create,1/23/2016 16:36,f83fb9cs,NA,f83fb9cs_update.json,f83fb9cs_archive.json,NA,NA,abc123,admin1,NA,NA,NA,NA,f83fb9cs.json
-4738753883,create,2/17/2016 10:52,55xg89g,NA,55xg89g_update.json,55xg89g_archive.json,NA,NA,abc123,admin2,NA,NA,NA,NA,55xg89g.json
-2857497594,create,11/3/2015 21:23,gfd8s8d,NA,gfd8s8d_update.json,gfd8s8d_archive.json,NA,NA,ghi789,admin1,NA,NA,NA,NA,gfd8s8d.json
-9397759366,comment,5/12/2016 12:27,f83fb9cs,NA,NA,NA,NA,NA,def456,admin2,NA,NA,This topic is interesting!,NA,NA
-7818564320,comment,7/2/2016 9:40,f83fb9cs,NA,NA,NA,NA,NA,ABC123,admin1,NA,NA,This data is so helpful for my research!,NA,NA
-4399539442,comment,5/8/2016 11:20,gfd8s8d,NA,NA,NA,NA,NA,ABC123,admin2,NA,NA,I don't think the data is useful.,NA,NA
-5783964037,comment,3/22/2016 13:38,gfd8s8d,NA,NA,NA,NA,NA,abc123,admin1,NA,NA,How does the author validate the results?,NA,NA
-7439575483,comment,4/17/2016 15:09,55xg89g,NA,NA,NA,NA,NA,ghi789,admin2,NA,NA,Can we conduct similar research in the future?,NA,NA
+00001,create,1/23/2016 16:36,00001,NA,00001_update.json,00001_archive.json,NA,NA,00001,00006,NA,NA,NA,NA,00001.json
+00002,create,2/17/2016 10:52,00002,NA,00002_update.json,00002_archive.json,NA,NA,00001,00007,NA,NA,NA,NA,00002.json
+00003,create,11/3/2015 21:23,00003,NA,00003_update.json,00003_archive.json,NA,NA,00003,00006,NA,NA,NA,NA,00003.json
+00004,comment,5/12/2016 12:27,00001,NA,NA,NA,NA,NA,00002,00007,NA,NA,This topic is interesting!,NA,NA
+00005,comment,7/2/2016 9:40,00001,NA,NA,NA,NA,NA,00004,00006,NA,NA,This data is so helpful for my research!,NA,NA
+00006,comment,5/8/2016 11:20,00003,NA,NA,NA,NA,NA,00004,00007,NA,NA,I don't think the data is useful.,NA,NA
+00007,comment,3/22/2016 13:38,00003,NA,NA,NA,NA,NA,00001,00006,NA,NA,How does the author validate the results?,NA,NA
+00008,comment,4/17/2016 15:09,00002,NA,NA,NA,NA,NA,00003,00007,NA,NA,Can we conduct similar research in the future?,NA,NA

@@ -5,7 +5,7 @@ drop table if exists swedb.pages;
 create table swedb.pages(
 	pageid      serial,
 	userid      integer,
-    json        json,  
+    json        varchar(100),  
     updatedjson varchar(100),
     archivejson varchar(100));
 
@@ -33,7 +33,7 @@ create table swedb.users(
     state       varchar(5),
     zip         integer,
     country     varchar(50),
-    phone       integer,
+    phone       varchar(20),
     banstatus   integer);
 
 drop table if exists swedb.stats;
