@@ -54,3 +54,8 @@ create table swedb.stats(
     content     varchar(140),
     reason      varchar(140),
     json        varchar(20));
+    
+drop table if exists swedb.intermediary;
+create table swedb.intermediary( 
+    tid		integer, 
+    userid	integer);
