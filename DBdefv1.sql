@@ -5,7 +5,7 @@ drop table if exists swedb.pages;
 create table swedb.pages(
 	pageid      serial,
 	userid      integer,
-    json        varchar(100),  
+    json        json,  
     updatedjson varchar(100),
     archivejson varchar(100));
 
