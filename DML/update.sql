@@ -76,5 +76,5 @@ set json =
 		"contact": "jmorgan@wikimedia.org"
 	}
 }', 
-updatedjson = '00001_update.json',
+updatedjson = '00001_update.json'
 where userid = '00001';
