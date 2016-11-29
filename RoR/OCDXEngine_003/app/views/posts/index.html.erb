@@ -1,0 +1,31 @@
+<h1>Posts</h1>
+<hr>
+
+<% @posts.each do |x| %>
+	<style></style>
+	<p>Title: <%= x.title %>
+	</p>
+	<p>Description: <%= x.description %>
+	</p>
+        <p>Author: <%= x.user.first_name + ' ' + x.user.last_name %>
+	<p>JSON File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.json %>"target="_blank">File</a>
+	</p>
+	<p>Post Link: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000/posts/<%= x.id %>"target="_blank">Post</a>
+	</p>
+	<% if x.file.present? %>
+        	<p>1st Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.file %>"target="_blank">File</a></p>
+	<% end %>
+	<% if x.filetwo.present? %>
+        	<p>2nd Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filetwo %>"target="_blank">File</a></p>
+	<% end %>
+	<% if x.filethree.present? %>
+        	<p>3rd Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filethree %>"target="_blank">File</a></p>
+	<% end %>
+	<% if x.filefour.present? %>
+        	<p>4th Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filefour %>"target="_blank">File</a></p>
+	<% end %>
+	<% if x.filefive.present? %>
+        	<p>5th Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filefive %>"target="_blank">File</a></p>
+	<% end %>
+	<hr>
+<% end %>

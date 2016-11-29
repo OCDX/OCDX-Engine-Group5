@@ -1,0 +1,26 @@
+<h1>Title: <%= @post.title %> </h1>
+<h2>Author: <%=@post.user.first_name + ' ' + @post.user.last_name%>  <h2>
+<h2>Description: <%= @post.description %></h2>
+<h2>Tags: <%= @post.tags %></h2>
+<h3>Manifest: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.json %>"target="_blank">File</a></h3>
+<% if @post.file.present? %>
+	<h3>1st Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.file %>"target="_blank">File</a></h3>
+<% end %>
+<% if @post.filetwo.present? %>
+        <h3>2nd Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filetwo %>"target="_blank">File</$
+<% end %>
+<% if @post.filethree.present? %>
+        <h3>3rd Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filethree %>"target="_blank">File</h3>
+<% end %>
+<% if @post.filefour.present? %>
+        <h3>4th Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filefour %>"target="_blank">File</h3>
+<% end %>
+<% if @post.filefive.present? %>
+        <h3>5th Additional File: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filefive %>"target="_blank">File</h3>
+<% end %>
+<h4>Created At: <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></h4>
+<h4>Updated At: <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></h4>
+<% if current_user.id == @post.user_id %> 
+<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+<% end %>
+<%= link_to 'Edit', [:edit, @post], data: { confirm: 'Are you sure you want to edit this post?' } %>

@@ -1,0 +1,68 @@
+<h1>New Post</h1>
+<hr>
+
+<div align="center"><%= form_for (@post) do |f| %>
+	<div class="field">
+		<%= f.label :title %>
+		<%= f.text_field :title, :required => true %>
+	</div>
+	<br>
+	<div class="field">	
+		<%= f.label :description %>
+		<%= f.text_area :description, :required => true %>
+	</div>
+	<br>
+        <div class="field">
+                <%= f.label :tags %>
+                <%= f.text_field :tags, :required => true %>
+        </div>
+        <br>
+	<div class="field">
+		Manifest File:<%= f.file_field :json, :required => true %>
+		<%= f.hidden_field :json_cache %>
+	</div>
+	<br>
+        <div class="field">
+                Additional Files:<%= f.file_field :file, :required => false %>
+                <%= f.hidden_field :file_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filetwo, :required => false %>
+                <%= f.hidden_field :filetwo_cache %>
+        </div>
+        <br>
+	        <div class="field">
+                <%= f.file_field :filethree, :required => false %>
+                <%= f.hidden_field :filethree_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefour, :required => false %>
+                <%= f.hidden_field :filefour_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefive, :required => false %>
+                <%= f.hidden_field :filefive_cache %>
+        </div>
+        <br>
+	<% if false %>
+	<div class="field">
+                <%= f.label :jsonTxt %>
+                <%= f.text_area :jsonTxt %>
+        </div>
+        <br>
+	<div class="field">
+                <%= f.label 'JSON' %>
+                <%= f.text_area :data, :required => true %>
+		<%= f.hidden_field :user_id , :value => current_user.id %>
+        </div>
+        <br>
+	<% end %>
+	<%= f.hidden_field :user_id , :value => current_user.id %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %></div>
