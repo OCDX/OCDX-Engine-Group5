@@ -18,3 +18,5 @@ This is the overall architecture for the OCDX Repository collection
 ** A pointer to a dataset (could be multiple files)
 * *A Jupyter Hub Notebook Directory containing a set of notebooks 
 
+## Deployment
+* https://github.com/ztbc68/OCDX-Engine-Group5/blob/master/Deployment.txt
