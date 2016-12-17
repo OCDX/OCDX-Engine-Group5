@@ -1,0 +1,67 @@
+Ruby on Rails - Start Here
+http://guides.rubyonrails.org/getting_started.html
+
+Create new rails app (with different database)
+	rails new OCDXEngine_001 --database=postgresql
+	
+Launch rails server (if you are on the hosting server [AWS])
+	rails s -p 3000 -b 0.0.0.0
+	
+Launch rails server
+	rails s
+	
+Connect to rails server (locally)
+	Webrowser ->localhost:3000
+	
+Connect to rails server (globally)
+	Webrowser ->35.160.28.84:3000
+	
+Install "devise" gem to allow user to login and register
+	->Gemfile
+	->gem 'devise'
+	
+	bundle install
+	rails g devise:install
+	
+	(Generate a user)
+	rails g devise User
+	
+	(Update config file ~/OCDXEngine_001/config/environments/development.rb to allow devise to send user emails)
+	Add line: config.action_mailer.default_url_options = { host: '35.160.28.84', port: 3000 }
+	
+	Create database
+	rake db:create
+	
+	Add changes to database
+	rake db:migrate
+
+Install bootstrap gem
+	->Gemfile
+	->gem 'bootstrap-sass', '~>3.3.7'
+	
+	bundle install
+	
+	Add 2 lines to css file and rename to .scss
+	@import "bootstrap-sprockets";
+	@import "bootstrap";
+	
+	Add line to js file
+	//= require bootstrap-sprockets
+	
+Generate model for posts to website
+	rails g model Post description:text
+Generate controller for Post model
+	rails g controller Posts
+	rake db:migrate
+Have controller generate "views"=pages you want it to make
+	rails g controller Posts new index show
+Edit routes.rb file - remove post stuff and add resources for post so you can gather all relevant infor for posts
+	resources :posts
+	Set homepage to posts index
+	root 'posts#index'
+
+
+
+	
+	
+	

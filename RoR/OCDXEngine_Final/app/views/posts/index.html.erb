@@ -1,0 +1,42 @@
+<h1 align="left"><u>POSTS</u></h1>
+
+<% @posts.each do |x| %>
+	<style>div{left:40%;}
+		.div1{text-align:left;
+			left:100px;
+			width:500px;
+			}
+		.div2{
+	text-align:left;
+                        left:100px;
+                        width:500px;
+			height: 200px;			
+}
+		tab1{padding-left: 16em;}
+		tab2{padding-left: 15em;}
+	</style>
+	<div class = "div1">
+		<h1><a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000/posts/<%= x.id %>"><%= x.title %></a></h1>
+		<p>Description: <%= x.description %></p>
+        	<p>Author(s): <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000/users/<%= x.user_id %>"><%= x.user.first_name + ' ' + x.user.last_name %> (OP)</a><% if x.coauthorone.present? %>, <%= x.coauthorone %><% end %><% if x.coauthortwo.present? %>, <%= x.coauthortwo %><% end %><% if x.coauthorthree.present? %>, <%= x.coauthorthree %><% end %><% if x.coauthorfour.present? %>, <%= x.coauthorfour %><% end %><% if x.coauthorfive.present? %>, <%= x.coauthorfive %><% end %></p> 
+		
+	</div>
+<div class = "div2">
+        <p>Manifest<tab2> <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.json %>"target="_blank">File</a>
+       </tab2> </p>
+	<% if x.file.present? %>
+        	<p>File 1:<tab1> <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.file %>"target="_blank">File</a></tab1></p>
+	<% end %>
+	<% if x.filetwo.present? %>
+        	<p>File 2: <tab1><a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filetwo %>"target="_blank">File</a></tab1></p>
+	<% end %>
+	<% if x.filethree.present? %>
+        	<p>File 3: <tab1><a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filethree %>"target="_blank">File</a></tab1></p>
+	<% end %>
+	<% if x.filefour.present? %>
+        	<p>File 4: <tab1><a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filefour %>"target="_blank">File</a></tab1></p>
+	<% end %>
+	<% if x.filefive.present? %>
+	<p>File 5: <tab1><a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= x.filefive %>"target="_blank">File</a></tab1></p>
+	<% end %></div>
+<% end %>

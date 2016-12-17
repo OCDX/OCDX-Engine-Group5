@@ -1,0 +1,80 @@
+<h1>Manifest Title: <%= @post.title %> </h1>
+<h2>Author: <%=@post.user.first_name + ' ' + @post.user.last_name%><h2>
+<% if @post.coauthortwo.present? %>
+<h2>Contributors: <%= @post.coauthorone %>, <%= @post.coauthortwo %><% if @post.coauthorthree.present %>, <%= @post.coauthorthree %><% end %><% if @post.coauthorfour.present %>, <%= @post.coauthorfour %><% end %><% if @post.coauthorfive.present %>, <%= @post.coauthorfive %><% end %>
+<% else %>
+<% if @post.coauthorone.present? %>
+<h2>Contributor: <%= @post.coauthorone %></h2>
+<% end %>
+<% end %>    
+<h2>Manifest Comment: <%= @post.description %></h2>
+<% if @post.manifestVersion.present? %>    
+<h2>Manifest Version: <%= @post.manifestVersion %></h2>
+<% end %>
+<% if @post.resObjTitle.present? %>    
+<h3>Research Object Title: <%= @post.resObjTitle %></h3>
+<% end %>    
+<% if @post.resObjAbstract.present? %>    
+<h3>Research Object Abstract: <%= @post.resObjAbstract %></h3>
+<% end %>    
+<% if @post.resObjDate.present? %>    
+<h3>Research Object Date: <%= @post.resObjDate %></h3>
+<% end %>    
+<% if @post.resObjDateLabel.present? %>    
+<h3>Research Object Date Label: <%= @post.resObjDateLabel %></h3>
+<% end %>    
+<% if @post.privacyOSight.present? %>    
+<h3>Privacy Oversight: <%= @post.privacyOSight %></h3>
+<% end %>    
+<% if @post.privacyIConsent.present? %>    
+<h3>Privacy Informed Consent: <%= @post.privacyIConsent %></h3>
+<% end %>    
+<% if @post.privacyAnonData.present? %>    
+<h3>Privacy Anonymized Data: <%= @post.privacyAnonData %></h3>
+<% end %>    
+<% if @post.privacyConsiderations.present? %>    
+<h3>Privacy Considerations: <%= @post.privacyConsiderations %></h3>
+<% end %>    
+<% if @post.provenanceNarrative.present? %>    
+<h3>Provenance Narrative: <%= @post.provenanceNarrative %></h3>
+<% end %>    
+<% if @post.publication.present? %>    
+<h3>Publication: <%= @post.publication %></h3>
+<% end %>    
+<% if @post.locationURL.present? %>    
+<h3>Location URL: <%= @post.locationURL %></h3>
+<% end %>    
+<% if @post.locationComment.present? %>    
+<h3>Location Comment: <%= @post.locationComment %></h3>
+<% end %>    
+<% if @post.filePermissions.present? %>    
+<h3>File Permissions: <%= @post.filePermissions %></h3>
+<% end %>    
+<% if @post.creators.present? %>    
+<h3>Creators: <%= @post.creators %></h3>
+<% end %>    
+<h2>Tags: <%= @post.tags %></h2>
+<h3>Manifest: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.json %>"target="_blank">File</a></h3>
+<% if @post.file.present? %>
+	<h3>File 1: <a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.file %>"target="_blank">File</a></h3>
+<% end %>
+<% if @post.filetwo.present? %>
+        <h3>File 2: 		<a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filetwo %>"target="_blank">File</a></h3>
+<% end %>
+<% if @post.filethree.present? %>
+        <h3>File 3: 		<a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filethree %>"target="_blank">File</a></h3>
+<% end %>
+<% if @post.filefour.present? %>
+        <h3>File 4: 		<a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filefour %>"target="_blank">File</a></h3>
+<% end %>
+<% if @post.filefive.present? %>
+        <h3>File 5: 		<a href="http://ec2-35-160-28-84.us-west-2.compute.amazonaws.com:3000<%= @post.filefive %>"target="_blank">File</a></h3>
+<% end %>
+<h4>Created At: <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></h4>
+<h4>Updated At: <%= @post.created_at.strftime("%B %d %Y, %l:%M%P") %></h4>
+<% if user_signed_in? %>
+<% if current_user.id == @post.user_id || current_user.usertype == 2 %> 
+<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+<% end %>
+<%= link_to 'Edit/Contribute', [:edit, @post], data: { confirm: 'Are you sure you want to edit this post?' } %>
+<% end %>

@@ -1,0 +1,168 @@
+<h1>Editing Post</h1>
+<hr>
+<div align="center"><%= form_for (@post) do |f| %>
+        <div class="field">
+                <%= f.label :title, "Manifest Title" %>
+                <%= f.text_field :title %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :description, "Manifest Comment" %>
+                <%= f.text_area :description %>
+        </div>
+        <br>
+    <div class="field">
+                <%= f.label :manifestVersion, "Manifest Version" %>
+                <%= f.text_field :manifestVersion %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjTitle, "Research Object Title" %>
+                <%= f.text_field :resObjTitle %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjAbstract, "Research Object Abstract" %>
+                <%= f.text_field :resObjAbstract %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjDate, "Research Object Date" %>
+                <%= f.text_field :resObjDate %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjDateLabel, "Research Object Date Label" %>
+                <%= f.text_field :resObjDateLabel %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyOSight, "Privacy Oversight" %>
+                <%= f.text_field :privacyOSight %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyIConsent, "Privacy Informed Consent" %>
+                <%= f.text_field :privacyIConsent %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyAnonData, "Privacy Anonymized Data" %>
+                <%= f.text_field :privacyAnonData %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyConsiderations, "Privacy Considerations" %>
+                <%= f.text_field :privacyConsiderations %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :provenanceNarrative, "Provenance Narrative" %>
+                <%= f.text_field :provenanceNarrative %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :publication, "Publication" %>
+                <%= f.text_field :publication %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :locationURL, "Location URL" %>
+                <%= f.text_field :locationURL %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :locationComment, "Location Comment" %>
+                <%= f.text_field :locationComment %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :filePermissions, "File Permissions" %>
+                <%= f.text_field :filePermissions %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :creators, "Creators" %>
+                <%= f.text_field :creators %>
+        </div>
+        <br>
+        <div class="field">
+		Please separate with spaces.<br>
+                <%= f.label :tags %>
+                <%= f.text_field :tags %>
+        </div>
+        <br>
+        <div class="field">
+                Manifest File (required, must be .json):<%= f.file_field :json, :required => true %>
+                <%= f.hidden_field :json_cache %>
+        </div>
+        <br>
+        <div class="field">
+                Additional Files (optional):<%= f.file_field :file, :required => false %>
+                <%= f.hidden_field :file_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filetwo, :required => false %>
+                <%= f.hidden_field :filetwo_cache %>
+        </div>
+        <br>
+                <div class="field">
+                <%= f.file_field :filethree, :required => false %>
+                <%= f.hidden_field :filethree_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefour, :required => false %>
+                <%= f.hidden_field :filefour_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefive, :required => false %>
+                <%= f.hidden_field :filefive_cache %>
+		<% unless @post.user_id == current_user.id %>
+			<% unless @post.coauthorone.present? %>
+				<%= f.hidden_field :coauthorone , :value => current_user.first_name + ' ' + current_user.last_name %>
+			<% end %>
+			<% if @post.coauthorone.present? && @post.coauthorone != (current_user.first_name + ' ' + current_user.last_name) %>
+				<% unless @post.coauthortwo.present? %>
+					<%= f.hidden_field :coauthortwo , :value => current_user.first_name + ' ' + current_user.last_name %>
+				<% end %>
+			<% end %>
+                        <% if @post.coauthortwo.present? && @post.coauthorone != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthortwo != (current_user.first_name + ' ' + current_user.last_name)%>
+				<% unless @post.coauthorthree.present? %>
+                                	<%= f.hidden_field :coauthorthree , :value => current_user.first_name + ' ' + current_user.last_name %>
+				<% end %>
+                        <% end %>
+                        <% if @post.coauthorthree.present? && @post.coauthorone != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthortwo != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthorthree != (current_user.first_name + ' ' + current_user.last_name) %>
+				<% unless @post.coauthorfour.present? %>
+                                	<%= f.hidden_field :coauthorfour , :value => current_user.first_name + ' ' + current_user.last_name %>
+				<% end %>
+                        <% end %>
+                        <% if @post.coauthorone.present? && @post.coauthorone != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthortwo != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthorthree != (current_user.first_name + ' ' + current_user.last_name) && @post.coauthorfour != (current_user.first_name + ' ' + current_user.last_name)%>
+				<% unless @post.coauthorfive.present? %>
+                                	<%= f.hidden_field :coauthorfive , :value => current_user.first_name + ' ' + current_user.last_name %>
+				<% end %>
+                        <% end %>
+		<% end %>
+        </div>
+        <br>
+        <% if false %>
+        <div class="field">
+                <%= f.label :jsonTxt %>
+                <%= f.text_area :jsonTxt %>
+        </div>
+        <br>
+        <% end %>
+        <% if false %>
+	<div class="field">
+                <%= f.label :data %>
+                <%= f.text_area :data %>
+        </div>
+        <br>
+	<% end %>
+
+        <div class="actions">
+                <%= f.submit "Update" %>
+        </div>
+<% end %></div>

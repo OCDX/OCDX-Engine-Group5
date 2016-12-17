@@ -1,0 +1,132 @@
+<h1>New Post</h1>
+<hr>
+
+<div align="center"><%= form_for (@post) do |f| %>
+	<div>* denotes a required field</div>
+	<div class="field">
+		<%= f.label :title, "*Manifest Title" %>
+		<%= f.text_field :title, :required => true %>
+	</div>
+	<br>
+	<div class="field">	
+		<%= f.label :description, "*Manifest Comment" %>
+		<%= f.text_area :description, :required => true %>
+	</div>
+	<br>
+        <div class="field">
+                <%= f.label :manifestVersion, "Manifest Version" %>
+                <%= f.text_field :manifestVersion %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjTitle, "Research Object Title" %>
+                <%= f.text_field :resObjTitle %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjAbstract, "Research Object Abstract" %>
+                <%= f.text_field :resObjAbstract %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjDate, "Research Object Date" %>
+                <%= f.text_field :resObjDate %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :resObjDateLabel, "Research Object Date Label" %>
+                <%= f.text_field :resObjDateLabel %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyOSight, "Privacy Oversight" %>
+                <%= f.text_field :privacyOSight %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyIConsent, "Privacy Informed Consent" %>
+                <%= f.text_field :privacyIConsent %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyAnonData, "Privacy Anonymized Data" %>
+                <%= f.text_field :privacyAnonData %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :privacyConsiderations, "Privacy Considerations" %>
+                <%= f.text_field :privacyConsiderations %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :provenanceNarrative, "Provenance Narrative" %>
+                <%= f.text_field :provenanceNarrative %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :publication, "Publication" %>
+                <%= f.text_field :publication %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :locationURL, "Location URL" %>
+                <%= f.text_field :locationURL %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :locationComment, "Location Comment" %>
+                <%= f.text_field :locationComment %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :filePermissions, "File Permissions" %>
+                <%= f.text_field :filePermissions %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.label :creators, "Creators" %>
+                <%= f.text_field :creators %>
+        </div>
+        <br>
+        <div class="field">
+		Please separate with spaces.<br>
+                <%= f.label :tags, "*Tags" %>
+                <%= f.text_field :tags, :required => true %>
+        </div>
+        <br>
+	<div class="field">
+		*Manifest File (must be .json):<%= f.file_field :json, :required => true %>
+		<%= f.hidden_field :json_cache %>
+	</div>
+	<br>
+        <div class="field">
+                Additional Files (optional):<%= f.file_field :file, :required => false %>
+                <%= f.hidden_field :file_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filetwo, :required => false %>
+                <%= f.hidden_field :filetwo_cache %>
+        </div>
+        <br>
+	        <div class="field">
+                <%= f.file_field :filethree, :required => false %>
+                <%= f.hidden_field :filethree_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefour, :required => false %>
+                <%= f.hidden_field :filefour_cache %>
+        </div>
+        <br>
+        <div class="field">
+                <%= f.file_field :filefive, :required => false %>
+                <%= f.hidden_field :filefive_cache %>
+        </div>
+        <br>
+	<%= f.hidden_field :user_id , :value => current_user.id %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %></div>
