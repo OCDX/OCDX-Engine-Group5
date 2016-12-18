@@ -57,4 +57,5 @@ Launch Rails App
 	rails s -p 3000 -b 0.0.0.0
 To stop server, use Ctrl + c
 To view site, go to ec2-##-###-###-###.us-west-2.compute.amazonaws.com:3000
+To run site until server shuts down, run command: rails s -p 3000 -b 0.0.0.0 -d
 
